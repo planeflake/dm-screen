@@ -1,10 +1,26 @@
 .App {
-  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/paper.png');
+  background-image: url('./background.jpg');
   background-repeat: repeat;
+  background-size: cover
 }
 
 .App-header {
   background-color: transparent;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url('./background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 }
 
 .nav-list {
@@ -12,9 +28,11 @@
   display: flex;
   justify-content: space-around;
   padding: 0;
+  margin-top: 20px;
 }
 
 .nav-list li {
+  background-color: #ffffff;
   color: #000;
   font-size: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -25,4 +43,28 @@
 
 .nav-list li i {
   margin-right: 5px;
+}
+
+.icon-button {
+  font-size: 20px; /* Adjusts the size of the text and the icon */
+  padding: 15px; /* Adds space around the text and the icon */
+  margin: 10px; /* Adds space around the button */
+  border-radius: 10px; /* Rounds the corners of the button */
+}
+
+.icon-large {
+  font-size: 30px; /* Adjusts the size of the text and the icon */
+  padding: 20px; /* Adds space around the text and the icon */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+.icon-large {
+  flex-grow: 1;
+  text-align: center;
+  border-radius: 15px;
 }

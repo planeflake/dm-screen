@@ -1,35 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import HomePage from './HomePage';
+import Campaigns from './campaigns';
+import Characters from './characters';
+import Effects from './effects';
+import Monsters from './monsters';
+import Settings from './settings';
+import Spells from './spells';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <nav>
-          <ul className="nav-list">
-            <li><i className="fas fa-dice-d20"></i> Campaigns</li>
-            <li><i className="fas fa-users"></i> Characters</li>
-            <li><i className="fas fa-dragon"></i> Monsters</li>
-            <li><i className="fas fa-magic"></i> Spells</li>
-            <li><i className="fas fa-skull"></i> Effects</li>
-            <li><i className="fas fa-cogs"></i> Settings</li>
-          </ul>
-        </nav>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {/* Your navigation bar goes here */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/campaigns" element={<Campaigns />} />
+          <Route path="/characters" element={<Characters />} />
+          <Route path="/effects" element={<Effects />} />
+          <Route path="/monsters" element={<Monsters />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/spells" element={<Spells />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
