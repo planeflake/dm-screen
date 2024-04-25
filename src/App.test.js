@@ -6,3 +6,9 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('renders navigation menu', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Campaigns/i);
+  expect(linkElement).toBeInTheDocument();
+});
