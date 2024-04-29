@@ -1,0 +1,60 @@
+.stat-block {
+    font-family: 'Arial', sans-serif;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .stat-block h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .stat-block p {
+    margin: 10px 0;
+  }
+  
+  .stat-block .attribute {
+    font-weight: bold;
+  }
+  
+  .stat-block .value {
+    margin-left: 10px;
+  }
+  
+  .stat-block .divider {
+    border-bottom: 1px solid #000;
+    margin: 10px 0;
+  }
+  
+  .stat-block .ability-scores {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stat-block .ability-score {
+    text-align: center;
+  }
+  
+  .stat-block .action {
+    margin-top: 20px;
+  }
+  
+  .stat-block .action h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .stat-block .action p {
+    margin: 5px 0;
+  }
+  
+  .stat-block .action .description {
+    margin-left: 20px;
+  }
+  

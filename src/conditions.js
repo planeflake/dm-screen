@@ -168,7 +168,21 @@ const conditions = [
           "The GM might also decide that certain environmental phenomena, such as a wave crashing over you while you’re on a storm-tossed ship, require you to succeed on a DC 10 Constitution saving throw to maintain concentration on a spell."
         ],
         "url": "/api/conditions/concentration"
-      }
+      },
+      {
+          "index": "hasted",
+          "name": "Hasted",
+          "desc": ["Hasted"         
+          ],
+          "url": "/api/conditions/hasted"
+        },
+        {
+            "index": "bleeding",
+            "name": "Bleeding",
+            "desc": ["Bleeding"         
+            ],
+            "url": "/api/conditions/bleeding"
+          }
 ];
 
 const iconMap = {

@@ -142,6 +142,18 @@ const Search = () => {
                             </label>
                         ))}
                     </div>
+                    <div className="filter-group">
+                        <h4>Classes</h4>
+                        {['Wizard', 'Sorcere', 'Paladin', 'Druid'].map(school => (
+                            <label key={school}>
+                                <input
+                                    type="checkbox"
+                                    value={school}
+                                    onChange={(e) => handleCheckboxChange(e, 'school')}
+                                /> {school}
+                            </label>
+                        ))}
+                    </div>                    
                 <ul className="results">
                 {results.map(spell => (
                     <li key={spell.index} onClick={() => handleSpellClick(spell)}>{spell.name}</li>
