@@ -4,11 +4,20 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 const app = express();
+const spells = require('./Spells.json'); 
+const conditions = require('./conditions.json'); 
 
 // Middleware
 app.use(cors({ origin: 'http://localhost:3000' }));
 app.options('*', cors({ origin: 'http://localhost:3000' }));
 app.use(bodyParser.json());
+app.use(express.json()); // Middleware to parse JSON bodies
+
+// Load spells from the JSON file
+function loadSpells() {
+    const spellsData = fs.readFileSync(path.join(__dirname, 'spells.json'), 'utf8');
+    return JSON.parse(spellsData);
+}
 
 // Monster data endpoints
 app.get('/api/monsters', (req, res) => {
@@ -29,11 +38,22 @@ app.post('/api/monsters', (req, res) => {
     res.json(monster);
 });
 
-// Spell data endpoints
+// GET endpoint to retrieve all spells
 app.get('/api/spells', (req, res) => {
-    const spellsData = fs.readFileSync(path.join(__dirname, 'spells.json'));
-    const spells = JSON.parse(spellsData);
-    res.json(spells);
+    const spells = loadSpells();
+    res.send(spells);
+    console.log('Spells Requested')
+});
+
+app.get('/api/spells/:name', (req, res) => {
+    const spellName = req.params.name;
+  const spell = spells.find(spell => spell.index.toLowerCase() === spellName.toLowerCase());
+console.log(spell)
+  if (!spell) {
+    return res.status(404).send('Spell not found');
+  }
+
+  res.send(spell);
 });
 
 app.post('/api/spells', (req, res) => {
@@ -56,13 +76,17 @@ app.get('/api/characters', (req, res) => {
 
 app.post('/api/characters', (req, res) => {
     const character = req.body;
-    // Logic to save the new character to the database
-    // and send the response
     const charactersData = fs.readFileSync(path.join(__dirname, 'characters.json'));
     const characters = JSON.parse(charactersData);
     characters.push(character);
     fs.writeFileSync(path.join(__dirname, 'characters.json'), JSON.stringify(characters, null, 2));
     res.json(character);
+});
+
+app.get('/api/conditions', (req, res) => {
+    const conditionsData = fs.readFileSync(path.join(__dirname, 'conditions.json'));
+    const conditions = JSON.parse(conditionsData);
+    res.json(conditions);
 });
 
 app.get('/api/campaigns', (req, res) => {
@@ -73,8 +97,6 @@ app.get('/api/campaigns', (req, res) => {
 
 app.post('/api/campaigns', (req, res) => {
     const campaign = req.body;
-    // Logic to save the new campaign to the database
-    // and send the response
     const campaignsData = fs.readFileSync(path.join(__dirname, 'campaigns.json'));
     const campaigns = JSON.parse(campaignsData);
     campaigns.push(campaign);
@@ -82,7 +104,6 @@ app.post('/api/campaigns', (req, res) => {
     res.json(campaign);
 });
 
-// Start the server
 app.listen(3001, () => {
     console.log('Server is running on port 3001');
 });

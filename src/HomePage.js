@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faDragon, faMagic, faBolt, faCog, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee, faDragon, faMagic, faBolt, faCog, faUsers, faSkullCrossbones  } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import './App.css'; // Import the CSS for this component
 
@@ -18,6 +18,11 @@ function HomePage() {
           <FontAwesomeIcon icon={faUsers} /> Characters
         </button>
       </Link>
+      <Link to="/conditions">
+        <button className="icon-large">
+          <FontAwesomeIcon icon={faSkullCrossbones} /> Conditions
+        </button>
+      </Link>      
       <Link to="/monsters">
         <button className="icon-large">
           <FontAwesomeIcon icon={faDragon} /> Monsters

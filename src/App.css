@@ -1,5 +1,4 @@
 .App {
-  background-image: url('./background.jpg');
   background-repeat: repeat;
   background-size: cover
 }
@@ -7,13 +6,14 @@
 .App-header {
   background-color: transparent;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-image: url('./background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -46,15 +46,21 @@ body {
 }
 
 .icon-button {
-  font-size: 20px; /* Adjusts the size of the text and the icon */
-  padding: 15px; /* Adds space around the text and the icon */
-  margin: 10px; /* Adds space around the button */
-  border-radius: 10px; /* Rounds the corners of the button */
+  font-size: 20px;
+  /* Adjusts the size of the text and the icon */
+  padding: 15px;
+  /* Adds space around the text and the icon */
+  margin: 10px;
+  /* Adds space around the button */
+  border-radius: 10px;
+  /* Rounds the corners of the button */
 }
 
 .icon-large {
-  font-size: 30px; /* Adjusts the size of the text and the icon */
-  padding: 20px; /* Adds space around the text and the icon */
+  font-size: 30px;
+  /* Adjusts the size of the text and the icon */
+  padding: 20px;
+  /* Adds space around the text and the icon */
 }
 
 .button-container {
@@ -67,4 +73,259 @@ body {
   flex-grow: 1;
   text-align: center;
   border-radius: 15px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.third-column {
+  overflow: auto;
+}
+#alphabet-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#alphabet-menu.open {
+  transform: translateX(0);
+}
+
+.letter {
+  cursor: pointer;
+}
+.card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.collapsible {
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.collapsible:hover {
+  background-color: #e0e0e0;
+}
+
+.content,
+
+.active-detail {
+  display: block;
+}
+
+.spell-link {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.spell-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+
+}
+
+.fa-fist-raised {
+  color: #E53E3E;
+}
+
+/* Red for Strength */
+.fa-running {
+  color: #38A169;
+}
+
+/* Green for Dexterity */
+.fa-heart {
+  color: #9B2C2C;
+}
+
+/* Dark Red for Constitution */
+.fa-brain {
+  color: #DD6B20;
+}
+
+/* Orange for Intelligence */
+.fa-eye {
+  color: #3182CE;
+}
+
+/* Blue for Wisdom */
+.fa-smile {
+  color: #D69E2E;
+}
+
+/* Yellow for Charisma */
+.stats {
+  display: flex;
+  /* Uses flexbox to lay out children in a row */
+  flex-wrap: wrap;
+  /* Allows items to wrap onto the next line if not enough space */
+  justify-content: space-around;
+  /* Distributes space between items evenly */
+  align-items: center;
+  /* Aligns items vertically in the center */
+}
+
+.stat {
+  margin: 5px;
+  /* Adds a small space around each stat for clarity */
+}
+
+.monster-title {
+  font-family: 'Ace Records', sans-serif;
+  /* Replace 'Your Font Name' with the name of your font */
+
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Ensures it takes full available width */
+}
+
+.desc {
+  max-width: 29.37vw; /* vw stands for viewport width, which is equivalent to the total width of the viewport */
+}
+
+.monster-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1; /* Allows the container to grow and fill available space */
+}
+
+
+.acolyte-image,
+.monster-details {
+  flex: 1 1 30%;
+  /* flex-grow, flex-shrink, flex-basis */
+  margin: 10px;
+  /* Add some margin around the columns */
+}
+
+.monster-details {
+  flex: 3;
+  /* Add any additional styles for your monster details here */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  /* Adjust this value to add space between your stats */
+}
+
+.collapsible .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.collapsible.open .content {
+  max-height: 500px;
+  /* or any other value that is greater than the height of your content */
+}
+
+/* App.css or in component styled-jsx */
+/* App.css or in component styled-jsx */
+
+.search-container {
+  display: flex;
+  padding: 20px;
+}
+
+.search-column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.filters {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.filter-group {
+  margin-bottom: 15px;
+}
+
+.filter-group h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.filter-group label {
+  font-size: 16px;
+}
+
+.results {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.results li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.results li:hover {
+  background-color: #f9f9f9;
+}
+
+.detail-column {
+  flex: 1;
+}
+
+.spell-details {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.spell-details h2 {
+  margin-bottom: 10px;
+}
+
+.spell-details p {
+  margin-bottom: 15px;
 }

@@ -57,6 +57,7 @@
 "savingThrows": [
     "Wis +4"
 ],
+"spells":["acid-arrow","acid-splash"],
 "abilities": [
     {
         "name": "Source.",

@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import Campaigns from './campaigns';
 import Characters from './characters';
 import Effects from './effects';
+import Conditions from './conditions';
 import Monsters from './monsters';
 import Settings from './settings';
 import Spells from './spells';
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/characters" element={<Characters />} />
+          <Route path="/conditions" element={<Conditions />} />
           <Route path="/effects" element={<Effects />} />
           <Route path="/monsters" element={<Monsters />} />
           <Route path="/settings" element={<Settings />} />
