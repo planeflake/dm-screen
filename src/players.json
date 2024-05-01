@@ -1,0 +1,28 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Oliver"
+    },
+    {
+      "id": 2,
+      "name": "Mai"
+    },
+    {
+      "id": 3,
+      "name": "Thomas"
+    },
+    {
+      "id": 4,
+      "name": "Sigbjørn"
+    },
+    {
+      "id": 5,
+      "name": "Jørgen"
+    },
+    {
+      "id": 6,
+      "name": "Chris"
+    }
+  ]
+}

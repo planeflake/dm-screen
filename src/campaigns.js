@@ -43,4 +43,6 @@ function Campaigns() {
   );
 }
 
+//Add campaign functions
+// add checkboxes to allow different sources for monsters,characters,races,classes,spells.
 export default Campaigns;

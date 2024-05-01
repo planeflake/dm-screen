@@ -203,8 +203,13 @@ body {
 }
 
 .stat {
-  margin: 5px;
-  /* Adds a small space around each stat for clarity */
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.stat strong {
+  margin-left: 10px;
 }
 
 .monster-title {
@@ -229,6 +234,15 @@ body {
   flex-grow: 1; /* Allows the container to grow and fill available space */
 }
 
+.spell-details-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
 
 .acolyte-image,
 .monster-details {
@@ -261,9 +275,6 @@ body {
   max-height: 500px;
   /* or any other value that is greater than the height of your content */
 }
-
-/* App.css or in component styled-jsx */
-/* App.css or in component styled-jsx */
 
 .search-container {
   display: flex;
@@ -328,4 +339,81 @@ body {
 
 .spell-details p {
   margin-bottom: 15px;
+}.spell-card {
+  max-width: 600px;
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;  
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+.spell-header {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.spell-name {
+  color: #5e81ac;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.spell-level-school {
+  font-style: italic;
+  color: #4c566a;
+  font-size: 18px;
+}
+
+.spell-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.spell-description {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.spell-damage, .spell-ritual, .spell-classes, .spell-subclasses, .spell-source {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+ul {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+li {
+  font-size: 14px;
+}
+
+.middle-column.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2:1 ratio, adjust as needed */
+  gap: 20px; /* Space between columns */
+}
+
+.monster-details {
+  padding:5px;
+}
+
+.container img {
+  width: 255px; /* Ensures the image scales to the column width */
+  border-radius: 5px; /* Optional: Rounds the corners of the image */
+}
+
+.spell-details-footer {
+  grid-column: 1 / -1; /* Makes the footer span across all columns */
+  padding: 20px;
+  background-color: #f0f0f0; /* Light grey background, adjust as needed */
+  border-top: 1px solid #ccc; /* Adds a subtle top border to the footer */
 }

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faDragon, faMagic, faBolt, faCog, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faFistRaised, faRunning, faHeart, faBrain, faEye, faSmile } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import Collapsible from 'react-collapsible';
-
+import { Link } from 'react-router-dom';
 
 function Monsters() {
   const [monsters, setMonsters] = useState([]);
@@ -19,6 +20,15 @@ function Monsters() {
       });
   }, []);
 
+  const abilityIcons = {
+    STR: { icon: "fa-fist-raised", color: "red" },  
+    DEX: { icon: "fa-running", color: "green" },    
+    CON: { icon: "fa-heart", color: "blue" },       
+    INT: { icon: "fa-brain", color: "purple" },     
+    WIS: { icon: "fa-eye", color: "yellow" },       
+    CHA: { icon: "fa-smile", color: "orange" }      
+};
+
   const handleSpellClick = (spell) => {
     // Fetch spell data from the API
     fetch(`http://localhost:3001/api/spells/${spell}`)
@@ -30,6 +40,39 @@ function Monsters() {
   };
 
   return (
+    <div className="home-page">
+    <div className="button-container">
+    <Link to="/campaigns">
+      <button className="icon-large">
+        <FontAwesomeIcon icon={faCoffee} /> Campaigns
+      </button>
+    </Link>
+    <Link to="/characters">
+      <button className="icon-large">
+        <FontAwesomeIcon icon={faUsers} /> Characters
+      </button>
+    </Link>
+    <Link to="/monsters">
+      <button className="icon-large">
+        <FontAwesomeIcon icon={faDragon} /> Monsters
+      </button>
+    </Link>
+    <Link to="/spellsauto">
+      <button className="icon-large">
+        <FontAwesomeIcon icon={faMagic} /> Spells
+      </button>
+    </Link>
+    <Link to="/effects">
+      <button className="icon-large">
+        <FontAwesomeIcon icon={faBolt} /> Effects
+      </button>
+    </Link>
+    <Link to="/settings">
+      <button className="icon-large">
+        <FontAwesomeIcon icon={faCog} /> Settings
+      </button>
+    </Link>
+  </div>    
     <div className="container flex-container">
       {monsters.map(monster => (
         <div key={monster.id}> {/* Move the key prop here */}
@@ -122,6 +165,7 @@ function Monsters() {
         </div>
       ))}
     </div>
+    </div>    
   );
 }
 

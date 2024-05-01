@@ -43,7 +43,7 @@
     "roll": "5d8+15"
 },
 "type": "UNDEAD",
-"size": "Medium undead",
+"size": "Medium",
 "speed": "30 ft.",
 "senses": "darkvision 60 ft.",
 "source": "tales-from-the-yawning-portal",
@@ -81,5 +81,60 @@
     }
 ],
 "image": null
-}
+},
+{
+    "id": "bandit",
+    "_index": 77,
+    "name": "Bandit",
+    "abilityScores": {
+      "STR": {
+        "score": 11,
+        "mod": 0,
+        "ability": "STR"
+      },
+      "DEX": {
+        "score": 12,
+        "mod": 1,
+        "ability": "DEX"
+      },
+      "CON": {
+        "score": 12,
+        "mod": 1,
+        "ability": "CON"
+      },
+      "INT": {
+        "score": 10,
+        "mod": 0,
+        "ability": "INT"
+      },
+      "WIS": {
+        "score": 10,
+        "mod": 0,
+        "ability": "WIS"
+      },
+      "CHA": {
+        "score": 10,
+        "mod": 0,
+        "ability": "CHA"
+      }
+    },
+    "alignment": "ANY_NON_LAWFUL_ALIGNMENT",
+    "armorClass": "12 (leather armor)",
+    "challengeRating": "1/8 (25 XP)",
+    "hitPoints": {
+      "average": 11,
+      "roll": "2d8+2"
+    },
+    "type": "HUMANOID",
+    "size": "Medium",
+    "speed": "30 ft.",
+    "senses": null,
+    "source": "monster-manual",
+    "languages": ["any one language (usually Common)"],
+    "skills": [],
+    "savingThrows": [],
+    "abilities": [],
+    "spells":["magic-missile","color-spray"],    
+    "image": null
+  }
 ]

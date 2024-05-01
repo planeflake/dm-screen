@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 const app = express();
-const spells = require('./Spells.json'); 
-const conditions = require('./conditions.json'); 
+const spells = require('./Spells.json');
+const conditions = require('./conditions.json');
 
 // Middleware
 app.use(cors({ origin: 'http://localhost:3000' }));
@@ -25,7 +25,7 @@ app.get('/api/monsters', (req, res) => {
     const monsters = JSON.parse(monstersData);
     res.json(monsters);
     console.log('!Success!');
-   })
+})
 
 app.post('/api/monsters', (req, res) => {
     const monster = req.body;
@@ -46,14 +46,15 @@ app.get('/api/spells', (req, res) => {
 });
 
 app.get('/api/spells/:name', (req, res) => {
+    console.log("Searching For: " & req.params.name)
     const spellName = req.params.name;
-  const spell = spells.find(spell => spell.index.toLowerCase() === spellName.toLowerCase());
-console.log(spell)
-  if (!spell) {
-    return res.status(404).send('Spell not found');
-  }
-
-  res.send(spell);
+    console.log("Searching For: " & spellName)
+    const spell = spells.find(spell => spell.index.toLowerCase() === spellName.toLowerCase());
+    console.log(spell)
+    if (!spell) {
+        return res.status(404).send('Spell not found');
+    }
+    res.send(spell);
 });
 
 app.post('/api/spells', (req, res) => {
@@ -103,6 +104,21 @@ app.post('/api/campaigns', (req, res) => {
     fs.writeFileSync(path.join(__dirname, 'campaigns.json'), JSON.stringify(campaigns, null, 2));
     res.json(campaign);
 });
+
+app.get('/api/players', (req,res) => {
+    console.log('Requesting Players')
+    const playersData = fs.readFileSync(path.join(__dirname, 'players.json'));
+    const players = JSON.parse(playersData);
+    res.json(players);
+});
+
+app.post('/api/player', (req, res) => {
+    const player = req.body;
+    const players = JSON.parse(player);
+    players.push(player);
+    fs.writeFileSync(path.join(__dirname, 'players.json'), JSON.stringify(players, null, 2));
+    res.json(player);
+})
 
 app.listen(3001, () => {
     console.log('Server is running on port 3001');

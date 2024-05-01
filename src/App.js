@@ -8,6 +8,9 @@ import Conditions from './conditions';
 import Monsters from './monsters';
 import Settings from './settings';
 import Spells from './spells';
+import SpellsAuto from './spellsauto';
+import MonstersAuto from './monsters-auto';
+
 
 function App() {
   return (
@@ -23,6 +26,8 @@ function App() {
           <Route path="/monsters" element={<Monsters />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/spells" element={<Spells />} />
+          <Route path="/spellsauto" element={<SpellsAuto />} />
+          <Route path="/monstersauto" element={<MonstersAuto />} />
         </Routes>
       </div>
     </Router>
