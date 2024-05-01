@@ -417,3 +417,47 @@ li {
   background-color: #f0f0f0; /* Light grey background, adjust as needed */
   border-top: 1px solid #ccc; /* Adds a subtle top border to the footer */
 }
+.characters-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Splits the grid into two columns, left column narrower */
+  gap: 20px; /* Space between the two columns */
+  padding: 20px; /* Padding around the grid */
+}
+
+.dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between each dropdown */
+}
+
+.information-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between content blocks */
+}
+
+.third-column {
+  background: #f4f4f4; /* Light grey background for the information display */
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px; /* Space above the content area */
+}
+
+.content-block {
+  margin: 5px 0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc; /* Adds a subtle line between entries */
+}
+
+select {
+  width: 100%; /* Makes select boxes fill their containers */
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+h1 {
+  margin: 0 0 10px 0; /* Space below headings */
+  font-size: 18px; /* Larger text for visibility */
+}
