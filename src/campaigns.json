@@ -1,14 +1,12 @@
-{
-  "campaigns": [
-    {
-      "id": 1,
-      "name": "Aether Well Enterprise",
-      "description": "An adequate attempt at world building."
-    },
-    {
-      "id": 2,
-      "name": "Brimstone Brigade",
-      "description": "An sub-adequate attempt at world building."
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Aether Well Enterprise",
+    "description": "An adequate attempt at world building."
+  },
+  {
+    "id": 2,
+    "name": "Brimstone Brigade",
+    "description": "An sub-adequate attempt at world building."
+  }
+]

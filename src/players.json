@@ -1,5 +1,4 @@
-{
-  "players": [
+[
     {
       "id": 1,
       "name": "Oliver"
@@ -25,4 +24,3 @@
       "name": "Chris"
     }
   ]
-}

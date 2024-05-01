@@ -27,6 +27,85 @@ app.get('/api/monsters', (req, res) => {
     console.log('!Success!');
 })
 
+app.get('/api/classes/:name', (req, res) => {
+    const className = req.params.name;
+    const classData = fs.readFileSync(path.join(__dirname, 'classes.json'));
+    const classes = JSON.parse(classData);
+    const classInfo = classes.find(c => c.name.toLowerCase() === className.toLowerCase());
+    console.log('Class Requested: ' + className)
+    if (!classInfo) {
+        return res.status(404).send('Class not found');
+    }
+    res.send(classInfo);
+});
+
+app.get('/api/classes', (req, res) => {
+    const classData = fs.readFileSync(path.join(__dirname, 'classes.json'));
+    const classes = JSON.parse(classData);
+    res.json(classes);
+    console.log('Classes Requested')
+})
+
+app.post('/api/classes', (req, res) => {
+    const newClass = req.body;
+    const classData = fs.readFileSync(path.join(__dirname, 'classes.json'));
+    const classes = JSON.parse(classData);
+    classes.push(newClass);
+    fs.writeFileSync(path.join(__dirname, 'classes.json'), JSON.stringify(classes, null, 2));
+    res.json(newClass);
+});
+
+
+
+app.get('/api/races/:name', (req, res) => {
+    const className = req.params.name;
+    const classData = fs.readFileSync(path.join(__dirname, 'races.json'));
+    const classes = JSON.parse(classData);
+    const classInfo = classes.find(c => c.name.toLowerCase() === className.toLowerCase());
+    if (!classInfo) {
+        return res.status(404).send('Race not found');
+    }
+    res.send(classInfo);
+});
+
+app.get('/api/backgrounds/', (req, res) => {
+    const classData = fs.readFileSync(path.join(__dirname, 'backgrounds.json'));
+    const classes = JSON.parse(classData);
+    console.log('All Backgrounds Requested')
+    if (!classes) {
+        return res.status(404).send('Backgrounds not found');
+    }
+    res.send(classes);
+});
+
+app.get('/api/backgrounds/:name', (req, res) => {
+    const className = req.params.name;
+    const classData = fs.readFileSync(path.join(__dirname, 'backgrounds.json'));
+    const classes = JSON.parse(classData);
+    const classInfo = classes.find(c => c.name.toLowerCase() === className.toLowerCase());
+    console.log(className + ' Background Requested')
+    if (!classInfo) {
+        return res.status(404).send('Background not found');
+    }
+    res.send(classInfo);
+});
+
+app.get('/api/races', (req, res) => {
+    const classData = fs.readFileSync(path.join(__dirname, 'races.json'));
+    const classes = JSON.parse(classData);
+    res.json(classes);
+    console.log('Races Requested')
+})
+
+app.post('/api/races', (req, res) => {
+    const newClass = req.body;
+    const classData = fs.readFileSync(path.join(__dirname, 'races.json'));
+    const classes = JSON.parse(classData);
+    classes.push(newClass);
+    fs.writeFileSync(path.join(__dirname, 'races.json'), JSON.stringify(classes, null, 2));
+    res.json(newClass);
+});
+
 app.post('/api/monsters', (req, res) => {
     const monster = req.body;
     // Logic to save the new monster to the database
